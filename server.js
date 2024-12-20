@@ -44,7 +44,7 @@ app.use(require('./middleware/add-user-to-locals-and-req'));
 
 // GET /  (home page functionality)
 app.get('/', (req, res) => {
-  res.render('home.ejs', { title: 'Home Page' });
+  res.render('home.ejs', { title: 'Game App' });
 });
 
 // '/auth' is the "starts with" path that the request must match
@@ -53,6 +53,10 @@ app.get('/', (req, res) => {
 app.use('/auth', require('./controllers/auth'));
 
 app.use('/videogames', require('./controllers/videogames'));
+
+app.get('/', (req, res) => {
+  res.render('home.ejs', { title: 'Home Page' });
+});
 
 // Any requests that get this far must have a signed in 
 // user thanks to ensureSignedIn middleware

@@ -3,17 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Your App's Title</title>
+    <title>Game App</title>
     <link rel="stylesheet" href="/css/main.css" />
   </head>
   <body>
     <nav>
       <a href="/">🏠</a>
       <div>
-        <a href="/videogames">VIDEO GAMES</a>
+        <a href="/unicorns">VIDEO GAMES</a>
         <!-- Above renders whether signed in or not -->
         <% if (user) { %>
-        <a href="/unicorns/new">ADD UNICORN</a>
+        <a href="/unicorns/new">ADD A VIDEO GAME</a>
         <a href="/auth/sign-out">SIGN OUT</a>
         <span><%= user.username %></span>
         <% } else { %>

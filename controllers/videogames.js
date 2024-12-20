@@ -4,7 +4,7 @@ const router = express.Router();
 // Middleware to protect selected routes
 const ensureSignedIn = require('../middleware/ensure-signed-in');
 
-// All routes start with '/unicorns'
+// All routes start with '/videogame'
 
 // GET /unicorns (index functionality) UN-PROTECTED - all users can access
 router.get('/', (req, res) => {
