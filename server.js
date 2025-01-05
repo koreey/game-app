@@ -50,17 +50,24 @@ app.get('/', (req, res) => {
 // '/auth' is the "starts with" path that the request must match
 // The "starts with" path is pre-pended to the paths
 // defined in the router module
+app.use('/applications', require('./controllers/applications'));
+
 app.use('/auth', require('./controllers/auth'));
 
-app.use('/videogames', require('./controllers/videogames'));
+
+
+
 
 app.get('/', (req, res) => {
   res.render('home.ejs', { title: 'Home Page' });
 });
 
+
+app.use(require('./middleware/ensure-signed-in'));
+
 // Any requests that get this far must have a signed in 
 // user thanks to ensureSignedIn middleware
-app.use(require('./middleware/ensure-signed-in'));
+
 // Any controller/routes mounted below here will have
 // ALL routes protected by the ensureSignedIn middleware
 

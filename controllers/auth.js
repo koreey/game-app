@@ -1,4 +1,6 @@
 const User = require('../models/user');
+
+
 const bcrypt = require('bcrypt');
 const express = require('express');
 // Create a router function/object (a router is a middleware function)
