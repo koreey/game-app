@@ -15,5 +15,15 @@ router.get('/new', ensureSignedIn, (req, res) => {
 });
 
 
+// POST// applications (create functionality/action)
+router.post('/', async (req, res) => {
+  try{
+req.user.applications.push(req.body);
+await req.user.save();
+res.redirect('/applications');
+} catch (e){
+  res.redirect('/applications/new');
+}
+});
 
 module.exports = router;
