@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
 const ensureSignedIn = require('../middleware/ensure-signed-in');
 // GET /unicorns/new (new functionality) PROTECTED - only signed in users can access
 router.get('/new', ensureSignedIn, (req, res) => {
-  res.send('Add a video game');
+  res.render('applications/new.ejs', {title: 'Add a Video-Game'})
 });
 
 

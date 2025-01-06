@@ -3,14 +3,14 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const applicationSchema = new mongoose.Schema({
-  comments: {
+  title: {
   },
-  content:
+  comments:
 {
   type: String,
   required: true
 },
-author:{
+console:{
   type: String,
   required: true
 }

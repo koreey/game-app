@@ -1,3 +1,6 @@
 <%- include('../partials/header.ejs') %>
-<p> List of Video Games</p>
+<% if (applications.length) {%>
+<% } else {%>
+    <h3> You don't have any video game reviews posted yet</h3>
+<%} %>
 <%- include('../partials/footer.ejs') %>
