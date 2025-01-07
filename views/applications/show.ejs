@@ -1,10 +1,14 @@
-<%- include('../partials/header.ejs') %> <% if (applications.length) {%>
-    <% if (application.comments) { %>
-        <p>Comments: <%= application.comments %></p>
-        <% } %> <% if (application.console) { %>
+<%- include('../partials/header.ejs') %>  <% if (application.length) {%>
+    <% if (application.notes) { %>
+        <p>Comments: <%= application.notes %></p>
+        <% } %> 
+        <% if (application.console) { %>
             <p>Console: <%= application.console %></p>
-        <% } %>
+            <% } %> <% 
+            <a href="/applications/<%= application._id %>/edit"> EDIT</a>
+
       <form action="/applications/<%= application._id %>?_method=DELETE" method="POST">
       <button type="submit">🗑️</button>
     </form>
+    <a href="/applications">Back to List</a>
 <%- include('../partials/footer.ejs') %>

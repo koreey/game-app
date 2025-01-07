@@ -17,7 +17,7 @@ router.get('/new', ensureSignedIn, (req, res) => {
 // GET/ applications/:id (show functionality/ action)
 router.get('/:id', (req,res) =>{
  const application = req.user.applications.id(req.params.id);
- res.render('/applications/show.ejs', {title: `${application.title} at ${application.game}`}
+ res.render('applications/show.ejs', {title: `${application.title} at ${application.game}`}
  );
 });
 
@@ -33,5 +33,15 @@ res.redirect('/applications');
 });
 
 // DELETE/ applications/:id (delete functionality/action)
+router.delete('/:id', async (req, res) =>{
+req.user.applications.pull(req.params.id);
+await req.user.save();
+res.redirect('/applications');
+});
 
+// GET/ applications/:id/edit (edit functionality/action)
+router.get('/:id/edit', (req, res) =>{
+const application = req.user.applications.id(req.params.id);
+res.render('/applications/edit.ejs', {title: 'Edit Entry', application});
+})
 module.exports = router;

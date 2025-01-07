@@ -3,7 +3,7 @@
 <% if (applications.length) {%>
     <ul>
         <% applications.forEach((application) => { %>
-        <li><%= application.title %> at <%= application.game %></li>
+        <li><a href="/applications/<%= application._id %>"><%= application.title %> at <%= application.game %></a></li>
         <% }) %>
       </ul>
 <% } else {%>
