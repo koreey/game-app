@@ -1,5 +1,11 @@
 <%- include('../partials/header.ejs') %>
+<a href="/users/<%=user._id%>/applications/new">Add a Game</a>
 <% if (applications.length) {%>
+    <ul>
+        <% applications.forEach((application) => { %>
+        <li><%= application.title %> at <%= application.game %></li>
+        <% }) %>
+      </ul>
 <% } else {%>
     <h3> You don't have any video game reviews posted yet</h3>
 <%} %>

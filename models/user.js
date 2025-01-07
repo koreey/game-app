@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const applicationSchema = new mongoose.Schema({
-  title: {
+  game: {
   },
   comments:
 {

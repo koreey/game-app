@@ -56,13 +56,6 @@ app.use('/auth', require('./controllers/auth'));
 
 
 
-
-
-app.get('/', (req, res) => {
-  res.render('home.ejs', { title: 'Home Page' });
-});
-
-
 app.use(require('./middleware/ensure-signed-in'));
 
 // Any requests that get this far must have a signed in 

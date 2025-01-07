@@ -14,6 +14,7 @@ router.get('/new', ensureSignedIn, (req, res) => {
   res.render('applications/new.ejs', {title: 'Add a Video-Game'})
 });
 
+// GET/ applications/:id (show functionality/ action)
 
 // POST// applications (create functionality/action)
 router.post('/', async (req, res) => {
