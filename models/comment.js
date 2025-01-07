@@ -41,4 +41,4 @@ comments : [commentSchema],
   }, {
   timestamps: true
   });
-  module.exports = mongoose.model("Comments" , commentSchema);
+  module.exports = mongoose.model("Application" , applicationSchemaSchema);
