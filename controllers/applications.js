@@ -15,6 +15,11 @@ router.get('/new', ensureSignedIn, (req, res) => {
 });
 
 // GET/ applications/:id (show functionality/ action)
+router.get('/:id', (req,res) =>{
+ const application = req.user.applications.id(req.params.id);
+ res.render('/applications/show.ejs', {title: `${application.title} at ${application.game}`}
+ );
+});
 
 // POST// applications (create functionality/action)
 router.post('/', async (req, res) => {
@@ -26,5 +31,7 @@ res.redirect('/applications');
   res.redirect('/applications/new');
 }
 });
+
+// DELETE/ applications/:id (delete functionality/action)
 
 module.exports = router;

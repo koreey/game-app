@@ -1,0 +1,10 @@
+<%- include('../partials/header.ejs') %> <% if (applications.length) {%>
+    <% if (application.comments) { %>
+        <p>Comments: <%= application.comments %></p>
+        <% } %> <% if (application.console) { %>
+            <p>Console: <%= application.console %></p>
+        <% } %>
+      <form action="/applications/<%= application._id %>?_method=DELETE" method="POST">
+      <button type="submit">🗑️</button>
+    </form>
+<%- include('../partials/footer.ejs') %>
