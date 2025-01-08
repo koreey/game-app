@@ -1,10 +1,10 @@
-<%- include('../partials/header.ejs') %>  <% if (application.length) {%>
+<%- include('../partials/header.ejs') %>  
     <% if (application.notes) { %>
         <p>Comments: <%= application.notes %></p>
         <% } %> 
-        <% if (application.console) { %>
+     <% if (application.console) { %>
             <p>Console: <%= application.console %></p>
-            <% } %> <% 
+            <% } %>  
             <a href="/applications/<%= application._id %>/edit"> EDIT</a>
 
       <form action="/applications/<%= application._id %>?_method=DELETE" method="POST">

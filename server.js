@@ -56,6 +56,7 @@ app.use('/auth', require('./controllers/auth'));
 
 
 
+
 app.use(require('./middleware/ensure-signed-in'));
 
 // Any requests that get this far must have a signed in 

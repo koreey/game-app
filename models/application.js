@@ -3,10 +3,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const commentSchema = new mongoose.Schema({
-
 username: {
-    type: String,
-    required: true,
   },
   rating: {
     type: Number,
@@ -20,7 +17,7 @@ username: {
   timestamps: true,
   });
 
-const applicationSchema = new mongoose.Schema({
+const applicationSchema = new Schema({
     game: {
     },
     notes:
@@ -41,4 +38,5 @@ comments : [commentSchema],
   }, {
   timestamps: true
   });
-  module.exports = mongoose.model("Application" , applicationSchemaSchema);
+
+  module.exports = mongoose.model("Application" , applicationSchema);
