@@ -18,11 +18,9 @@ router.get('/new', ensureSignedIn, (req, res) => {
 router.get('/:id', async (req,res) =>{
   try{
  const application = await Application.findById(req.params.id);
- console.log(application)
  res.render('applications/show.ejs', {title: application.game , application}
  );
   }catch (e){
-    console.log(e);
     res.redirect('/applications');
   }
 });
@@ -40,14 +38,28 @@ res,redirect('/applications')
 
 // DELETE/ applications/:id (delete functionality/action)
 router.delete('/:id', async (req, res) =>{
-req.user.applications.pull(req.params.id);
-await req.user.save();
+  try{
+    req.body.owner = req.user._id
+    const application = await Application.findOneAndDelete({
+      _id: req.params.id,
+      owner: req.body.owner,
+    });
 res.redirect('/applications');
+    } catch (e){
+      res.redirect('/applications');
+    }
+  
 });
 
 // GET/ applications/:id/edit (edit functionality/action)
-router.get('/:id/edit', (req, res) =>{
-const application = req.user.applications.id(req.params.id);
+
+router.get('/:id/edit', async(req, res) =>{
+  try{
+const application = await Application.findById(req.params.id);
 res.render('applications/edit.ejs', {title: 'Edit Entry', application});
-})
+
+} catch (e) {
+  res.redirect('/applications');
+}
+});
 module.exports = router;
