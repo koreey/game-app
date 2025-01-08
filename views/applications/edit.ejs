@@ -1,14 +1,15 @@
 <%- include('../partials/header.ejs') %>
 
-<form action="/applications" method="POST">
+<form action="/applications/<%= application._id %>?_method=PUT" method="POST">
+  
     <label for="game">Game Title</label>
     <input type="text" name="game" id="game" value="<%= application.game %>" required />
   
     <label for="notes">Comments</label>
-    <input type="text" name="notes" id="noes" value="<%= application.notes %>"  required />
+    <input type="text" name="notes" id="notes" value="<%= application.notes %>"  required />
     <label for="console">Gaming Console</label>
     <input type="text" name="console" id="console" value="<%= application.console %>"  required />
   
-  <button type="submit"> Video Game</button>
+  <button type="submit"> Submit</button>
 </form>
 <%- include('../partials/footer.ejs') %>

@@ -51,6 +51,8 @@ res.redirect('/applications');
   
 });
 
+
+
 // GET/ applications/:id/edit (edit functionality/action)
 
 router.get('/:id/edit', async(req, res) =>{
@@ -62,4 +64,21 @@ res.render('applications/edit.ejs', {title: 'Edit Entry', application});
   res.redirect('/applications');
 }
 });
+
+// PUT/ applications/:id
+router.put('/:id', async (req, res) => {
+  console.log(req.body)
+  try{
+    const application = await Application.findById(req.params.id);
+      application.game = req.body.game;
+      application.notes = req.body.notes;
+      application.console = req.body.console;
+await application.save();
+res.redirect('/applications');
+  } catch (e){
+    res.redirect('/applications');
+  }
+});
+
+
 module.exports = router;
