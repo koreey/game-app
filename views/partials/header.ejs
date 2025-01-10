@@ -12,7 +12,7 @@
       <div>
         <!-- Above renders whether signed in or not -->
         <% if (user) { %>
-          <a href="/applications">VIDEO GAMES</a>
+        <a href="/applications">VIDEO GAMES</a>
         <a href="/applications/new">ADD A VIDEO GAME</a>
         <a href="/auth/sign-out">SIGN OUT</a>
         <span><%= user.username %></span>
@@ -24,4 +24,6 @@
     </nav>
     <main>
       <h1><%= title %></h1>
-
+    </main>
+  </body>
+</html>

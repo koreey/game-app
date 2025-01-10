@@ -8,7 +8,7 @@ body {
   height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr auto;
-  background-image: url('../image/background.jpg');
+  background-image: url("../image/background.jpg");
   background-size: cover;
 }
 
@@ -68,7 +68,7 @@ select {
   border: 0.3vmin solid rgb(0, 0, 0);
 }
 
-form button[type='submit'] {
+form button[type="submit"] {
   grid-column: span 2;
 }
 

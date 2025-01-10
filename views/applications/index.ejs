@@ -1,12 +1,15 @@
 <%- include('../partials/header.ejs') %>
 <a href="/applications/new">Add a Game</a>
 <% if (applications.length) {%>
-    <ul>
-        <% applications.forEach((application) => { %>
-        <li><a href="/applications/<%= application._id %>"><%= application.title %> at <%= application.game %></a></li>
-        <% }) %>
-      </ul>
+<ul>
+  <% applications.forEach((application) => { %>
+  <li>
+    <a href="/applications/<%= application._id %>"
+      ><%= application.title %> at <%= application.game %></a
+    >
+  </li>
+  <% }) %>
+</ul>
 <% } else {%>
-    <h3> You don't have any video game reviews posted yet</h3>
-<%} %>
-<%- include('../partials/footer.ejs') %>
+<h3>You don't have any video game reviews posted yet</h3>
+<%} %> <%- include('../partials/footer.ejs') %>
