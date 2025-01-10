@@ -8,22 +8,24 @@ body {
   height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr auto;
+  background-image: url('../image/background.jpg');
+  background-size: cover;
 }
 
 nav,
 footer {
-  background-color: lightblue;
+  background-color: rgb(13, 13, 13);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2vmin;
+  padding: 1vmin;
   font-size: 2vh;
   color: lightslategray;
 }
 
 nav a {
   text-decoration: none;
-  color: slategray;
+  color: rgb(0, 0, 0);
   background-color: white;
   padding: 1vmin;
   border-radius: 1vmin;
@@ -37,7 +39,7 @@ nav a {
 
 nav span {
   font-size: 1.5vmin;
-  color: lightslategray;
+  color: rgb(238, 239, 241);
 }
 
 main {
@@ -45,6 +47,7 @@ main {
   flex-direction: column;
   align-items: center;
   margin-top: 5vmin;
+  color: white;
 }
 
 form {
@@ -62,7 +65,7 @@ form * {
 input,
 textarea,
 select {
-  border: 0.3vmin solid black;
+  border: 0.3vmin solid rgb(0, 0, 0);
 }
 
 form button[type='submit'] {
