@@ -1,6 +1,7 @@
 # Game-App (for now)
 This app is for all video game enthusiast! The purpose of this app is to be able to see a list of video games that users of the app have posted. You will be able to see a description of the game and comments made by the user giving a review/synopsis of the game.
-## Screenshot
+## Screenshot:
+![game-app](<Screenshot 2025-01-09 at 6.50.17 PM.png>)
 ## Technologies Used: 
 Express, Node.js, MongoDB, Morgan,
 ## Getting Started:
